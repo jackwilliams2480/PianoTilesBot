@@ -2,7 +2,7 @@
 
 This bot utilizes the `java.awt` package by creating a BufferedImage, reading the image for tiles, then pressing the coresponding key that needs to be pressed.
 
-## How it works
+## Try Catch
 Before anything we need to make sure we avoid the certain exceptions that may occur when using `java.awt`, so make sure to put everything in a try catch statement.
 ```java
 try{
@@ -11,8 +11,8 @@ try{
   throw new IllegalArgumentException("Something went wrong!");
 }
 ```
-
-First specifiy the bounds of the game, then put these bounds into a Rectangle object. The variation I use takes in four parameters
+## How it works
+First, specifiy the bounds of the game and then put these bounds into a Rectangle object. The variation I use takes in four parameters
 (int x, int y, int width, int height), which uses pixels as units. The x and y represent the top left of the rectangle, the width goes from left to right, and the height goes from top to bottom. My game bounds where (750, 230, 400, 460) going from the website [Don't Tap The White Tile](http://tanksw.com/piano-tiles/).
 
 ```java
@@ -27,7 +27,7 @@ BufferedImage img = robot.createScreenCapture(rec);
   Color clicked = new Color(77,77,77);
   ```
 
-Next, we need to read the image and get the pixel color of each tile area, and compair it to the color we need to click. By importing the `java.awt.event.*` from our original `java.awt` we can use keyPress to press each of our four KeyEvents A,S,D, and F.
+Next, we need to read the image and get the pixel color of each tile area, and compair it to the color we need to click. By importing the `java.awt.event.*` from our original `java.awt` we can use keyPress to press each of our four KeyEvents A,S,D, and F. Note that because we are reading a BufferedImage and not direct pixels from the screen, we need to pass the value from .getRGB into a Color object so we can easily compair the values to the specified ones. 
 ```java
 Color first = new Color(img.getRGB(70,377));
 Color second = new Color(img.getRGB(165,377));
@@ -42,5 +42,10 @@ if(first.equals(black)){
   }
 }
 ```
+
+## Things to avoid
+One thing that I ran into when first starting this bot was that I used the `robot.getPixelColor(x, y)`. Getting values back from a video card is often slow, so when you run the method 300+ times within each second the bot barley makes it past 100 tiles before getting to slow. This is caused by fast write sleeds, but slow read speeds. 
+
+Since, to a certain extend, we cannot avoid the speed limitations of getting pixels from the screen, its a lot more efficient to get the pixels in bulk and read them with img.getGRB(); rather than call getPixelColor 300+ times.
 
 
