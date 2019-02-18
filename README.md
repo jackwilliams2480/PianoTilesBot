@@ -1,6 +1,6 @@
 # PianoTilesBot
 
-This bot utilizes the java.awt package by creating a BufferedImage, reading the image for tiles, then pressing the coresponding key that needs to be pressed.
+This bot utilizes the `java.awt` package by creating a BufferedImage, reading the image for tiles, then pressing the coresponding key that needs to be pressed.
 
 ## How it works
 First specifiy the bounds of the game, then put these bounds into a Rectangle object. The variation I use takes in four parameters, 
