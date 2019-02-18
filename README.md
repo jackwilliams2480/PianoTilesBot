@@ -44,8 +44,8 @@ if(first.equals(black)){
 ```
 
 ## Things to avoid
-One thing that I ran into when first starting this bot was that I used the `robot.getPixelColor(x, y)`. Getting values back from a video card is often slow, so when you run the method 300+ times within each second the bot barley makes it past 100 tiles before getting to slow. This is caused by fast write sleeds, but slow read speeds. 
+One thing that I ran into when first starting this bot was that I used the `robot.getPixelColor(x, y)`. Getting values back from a video card is often slow, so when you run the method 300+ times within each second the bot barley makes it past 100 tiles before getting to slow. This is caused by fast write speeds, but slow read speeds. 
 
-Since, to a certain extend, we cannot avoid the speed limitations of getting pixels from the screen, its a lot more efficient to get the pixels in bulk and read them with img.getGRB(); rather than call getPixelColor 300+ times.
+Since, to a certain extend, we cannot avoid the speed limitations of getting pixels from the screen, its a lot more efficient to get the pixels in bulk and read them with img.getRGB(); rather than call getPixelColor 300+ times.
 
 
