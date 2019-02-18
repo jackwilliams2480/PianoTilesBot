@@ -3,6 +3,15 @@
 This bot utilizes the `java.awt` package by creating a BufferedImage, reading the image for tiles, then pressing the coresponding key that needs to be pressed.
 
 ## How it works
+Before anything we need to make sure we avoid the certain exceptions that may occur when using `java.awt`, so make sure to put everything in a try catch statement.
+```java
+try{
+  //code
+}catch(Exception e){
+  throw new IllegalArgumentException("Something went wrong!");
+}
+```
+
 First specifiy the bounds of the game, then put these bounds into a Rectangle object. The variation I use takes in four parameters
 (int x, int y, int width, int height), which uses pixels as units. The x and y represent the top left of the rectangle, the width goes from left to right, and the height goes from top to bottom. My game bounds where (750, 230, 400, 460) going from the website [Don't Tap The White Tile](http://tanksw.com/piano-tiles/).
 
@@ -33,3 +42,5 @@ if(first.equals(black)){
   }
 }
 ```
+
+
