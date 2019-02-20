@@ -1,6 +1,5 @@
 # PianoTilesBot
-
-This bot utilizes the `java.awt` package by creating a BufferedImage, reading the image for tiles, then pressing the coresponding key that needs to be pressed.
+This bot utilizes the `java.awt` package by creating a BufferedImage, reading the image for tiles every x seconds, then pressing the coresponding tile that shows up on the image. Although orginaly designed for one particular website, you can apply this bot to any type of PianoTiles game. Refer to `PianoTilesBotWithClicking`.
 
 ## Try Catch
 Before anything we need to make sure we avoid the certain exceptions that may occur when using `java.awt`, so make sure to put everything in a try catch statement.
