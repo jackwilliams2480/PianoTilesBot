@@ -15,7 +15,7 @@ First, specifiy the bounds of the game and then put these bounds into a Rectangl
 (int x, int y, int width, int height), which uses pixels as units. The x and y represent the top left of the rectangle, the width goes from left to right, and the height goes from top to bottom. My game bounds where (750, 230, 400, 460) going from the website [Don't Tap The White Tile](http://tanksw.com/piano-tiles/).
 
 ```java
-Rectangle rec = new Rectangle(750, 230, 400, 460);
+Rectangle rec = new Rectangle(int x, int y, , 460);
 ```
 
 Next we need to create a BufferedImage so we can read what is happening on the screen. Depending on which website you use, the colors for detecting tiles can change, but these are taken from the website above. 
