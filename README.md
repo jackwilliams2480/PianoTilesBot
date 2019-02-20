@@ -18,7 +18,7 @@ First, specifiy the bounds of the game and then put these bounds into a Rectangl
 Rectangle rec = new Rectangle(750, 230, 400, 460);
 ```
 
-Next we need to create a `BufferedImage` so we can read what is happening on the screen. Depending on which website you use, the colors for detecting tiles can change, but these are taken from the website above. 
+Next we need to create a BufferedImage so we can read what is happening on the screen. Depending on which website you use, the colors for detecting tiles can change, but these are taken from the website above. 
 ```java
 BufferedImage img = robot.createScreenCapture(rec);
   Color black =  new Color(17,17,17);
@@ -46,5 +46,11 @@ if(first.equals(black)){
 One thing that I ran into when first starting this bot was that I used the `robot.getPixelColor(x, y)`. Getting values back from a video card is often slow, so when you run the method 300+ times within each second the bot barley makes it past 100 tiles before getting to slow. This is caused by fast write speeds, but slow read speeds. 
 
 Since, to a certain extend, we cannot avoid the speed limitations of getting pixels from the screen, its a lot more efficient to get the pixels in bulk and read them with img.getRGB(); rather than call getPixelColor 300+ times.
+
+## Things to do
+- the program does not run for long, errors rise within the first 100 tiles
+- maybe JSON file would be better/easier to read?
+- version that supports Clicking instead of keyevents
+-
 
 
