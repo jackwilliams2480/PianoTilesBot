@@ -1,0 +1,29 @@
+//This file contains the variables that you need to run the bot. 
+//Run the code once, going throught all of the prompts, and it should end when 
+//the the last variable is entered. If all are entered correctly the code should
+//run without errors and without prompting you again. 
+//(I tried using a JSON file but couldnt really get it to work)
+
+Top left:
+x = ;
+y = ;
+
+Bottom right:
+x = ;
+y = ;
+
+Tiles:
+amount = n;
+tile n:
+x = ;
+y = ;
+tile n:
+x = ;
+y = ;
+tile n:
+x = ;
+y = ;
+tile n:
+x = ;
+y = ;
+
